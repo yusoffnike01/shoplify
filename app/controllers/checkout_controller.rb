@@ -4,6 +4,7 @@ class CheckoutController < ApplicationController
         puts "===#{@product.name}==="
         puts "===#{@product.price}==="
         @session = Stripe::Checkout::Session.create({
+                 customer: current_user.stripe_customer_id
                   payment_method_types: ['card'],
                  line_items: [{
                      name:@product.name,

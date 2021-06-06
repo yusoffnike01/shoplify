@@ -1,4 +1,4 @@
-var stripe = Stripe("<%= Rails.application.credentials[:stripe][:public] %>");
+var stripe = Stripe("<%= Stripe.api_key = 'pk_test_51IyzarKldgvoldEIjsVY2L0kKfmZ1qqa7Bpbw4rfuA5ajA7z8QfdDHyDIfmBjTdS73Znc9CZXZ5OL83JuLDpshH000L1bm8cE7' %>");
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
